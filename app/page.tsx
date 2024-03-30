@@ -1,17 +1,24 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
-    <main className="h-screen flex items-center justify-center p-5">
-      <div className="bg-white shadow-lg p-5 rounded-3xl w-full max-w-screen-sm flex flex-col">
-        {["Name", "Email", "Password"].map((person, index) => (
-          <div key={index} className="flex items-center gap-5">
-            <div className="size-7 bg-blue-400 rounded-full" />
-            <span className="text-lg font-medium">{person}</span>
-            <div className="size-5 bg-red-500 text-white flex items-center justify-center rounded-full">
-              <span>{index}</span>
-            </div>
-          </div>
-        ))}
+    <div className="flex flex-col items-center justify-between min-h-screen p-6">
+      <div className="my-auto flex flex-col items-center gap-2 *:font-medium">
+        <span className="text-9xl">🥕</span>
+        <h1 className="text-4xl">당근</h1>
+        <h2 className="text-2xl">Welcome</h2>
       </div>
-    </main>
+      <div className="flex flex-col items-center gap-3 w-full">
+        <Link href="/signup" className="primary-btn text-lg py-1.5">
+          시작하기
+        </Link>
+        <div className="flex gap-2">
+          <span>이미 회원이신가요?</span>
+          <Link href="/login" className="hover:underline underline-offset-2">
+            로그인
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 }
